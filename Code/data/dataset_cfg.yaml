@@ -1,0 +1,48 @@
+data_path: ./BAF.parquet
+
+data_cols:
+  label: 'fraud_bool'
+  timestamp: 'month'
+  protected: 'customer_age'
+  categorical:
+    - "payment_type"
+    - "employment_status"
+    - "housing_status"
+    - "source"
+    - "device_os"
+  
+categorical_dict:
+  device_os:
+  - linux
+  - macintosh
+  - other
+  - windows
+  - x11
+  employment_status:
+  - CA
+  - CB
+  - CC
+  - CD
+  - CE
+  - CF
+  - CG
+  housing_status:
+  - BA
+  - BB
+  - BC
+  - BD
+  - BE
+  - BF
+  - BG
+  payment_type:
+  - AA
+  - AB
+  - AC
+  - AD
+  - AE
+  source:
+  - INTERNET
+  - TELEAPP
+
+
+

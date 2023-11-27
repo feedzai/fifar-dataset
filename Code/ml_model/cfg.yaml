@@ -1,0 +1,18 @@
+data_path: '../data/BAF.parquet'
+
+data_cols:
+  label: 'fraud_bool'
+  timestamp: 'month'
+  protected: 'customer_age'
+  categorical:
+    - "payment_type"
+    - "employment_status"
+    - "housing_status"
+    - "source"
+    - "device_os"
+
+
+splits:  # open intervals [a, b[
+  train: [0, 3]
+  ml_val: [3, 4]
+  deployment: [3, 8]

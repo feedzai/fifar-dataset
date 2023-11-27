@@ -1,0 +1,230 @@
+output_paths:
+  metadata: 'metadata.yaml'
+  test_dir: './test/'
+  train_dir: './train/'
+
+test_run:
+  model_path:  '../expertise_models/models/'
+  results_path: './test_results/'
+  n_jobs: 1
+
+  metadata: 'metadata.yaml'
+
+  test_paths:
+    data: './test/test.parquet'
+    experts_pred: './test/test_expert_pred.parquet'
+  
+  base_cfg:
+    confidence_deferral: False
+    solver: scheduler
+    calibration: False
+    fp_cost: 'theoretical'
+    fp_protected_penalty: 0
+    dynamic: False
+    target_fpr: 0.05
+    target_fpr_disparity: 1.2
+    fpr_learning_rate: 0
+    fpr_disparity_learning_rate: 0
+  
+  experiments:
+    
+    - batch:
+        - small
+      capacity:
+        - regular
+      confidence_deferral:
+        - True
+      solver:
+        - individual
+        - random
+        - scheduler
+      fp_cost:
+        - 'theoretical'
+    
+
+data_cfg_path: '../data/dataset_cfg.yaml'
+experts_pred_path: '../experts/expert_info/deployment_predictions.parquet'
+expert_ids_path: '../experts/expert_info/expert_ids.yaml'
+
+splits:  # open intervals [a, b[
+  train: [3, 7]
+  test: [7, 8]
+
+random_seed: 42
+
+
+environments_train:
+  batch:
+    small:
+      size: 1000
+      seed: 42
+  capacity:
+    regular:
+      deferral_rate: 0.5
+      distribution: 'homogeneous'
+
+environments_test:
+  batch:
+    small_batch-1:
+      size: 1000
+      seed: 42
+    small_batch-2:
+      size: 1000
+      seed: 43
+    small_batch-3:
+      size: 1000
+      seed: 44
+    small_batch-4:
+      size: 1000
+      seed: 45
+    small_batch-5:
+      size: 1000
+      seed: 46
+    large_batch-1:
+      size: 5000
+      seed: 42
+    large_batch-2:
+      size: 5000
+      seed: 43
+    large_batch-3:
+      size: 5000
+      seed: 44
+    large_batch-4:
+      size: 5000
+      seed: 45
+    large_batch-5:
+      size: 5000
+      seed: 46
+  capacity:
+    homogenous_fullteam_def50:
+      deferral_rate: 0.5
+      distribution: 'homogeneous'
+    #Now variable capacity, same 5 batches
+    variable-1_fullteam_def50:
+      deferral_rate: 0.5
+      distribution: 'variable'
+      distribution_seed: 42
+      distribution_stdev: 0.2
+    variable-2_fullteam_def50:
+      deferral_rate: 0.5
+      distribution: 'variable'
+      distribution_seed: 43
+      distribution_stdev: 0.2
+    variable-3_fullteam_def50:
+      deferral_rate: 0.5
+      distribution: 'variable'
+      distribution_seed: 44
+      distribution_stdev: 0.2
+    variable-4_fullteam_def50:
+      deferral_rate: 0.5
+      distribution: 'variable'
+      distribution_seed: 45
+      distribution_stdev: 0.2
+    #...Now for the homogenous Team 1
+    homogenous_partialteam-1_def50:
+      deferral_rate: 0.5
+      distribution: 'homogeneous'
+      absence: 0.5
+      absence_seed: 42
+    #Team 2
+    homogenous_partialteam-2_def50:
+      deferral_rate: 0.5
+      distribution: 'homogeneous'
+      absence: 0.5
+      absence_seed: 43
+    #Variable capacity -------
+    variable-1_partialteam-1_def50:
+      deferral_rate: 0.5
+      distribution: 'variable'
+      absence: 0.5
+      absence_seed: 42
+      distribution_seed: 42
+      distribution_stdev: 0.2
+    variable-1_partialteam-2_def50:
+      deferral_rate: 0.5
+      distribution: 'variable'
+      absence: 0.5
+      absence_seed: 43
+      distribution_seed: 42
+      distribution_stdev: 0.2
+    variable-2_partialteam-1_def50:
+      deferral_rate: 0.5
+      distribution: 'variable'
+      absence: 0.5
+      absence_seed: 42
+      distribution_seed: 43
+      distribution_stdev: 0.2
+    variable-2_partialteam-2_def50:
+      deferral_rate: 0.5
+      distribution: 'variable'
+      absence: 0.5
+      absence_seed: 43
+      distribution_seed: 43
+      distribution_stdev: 0.2
+
+    homogenous_fullteam_def20:
+      deferral_rate: 0.2
+      distribution: 'homogeneous'
+    #Now variable capacity, same 5 batches
+    variable-1_fullteam_def20:
+      deferral_rate: 0.2
+      distribution: 'variable'
+      distribution_seed: 42
+      distribution_stdev: 0.2
+    variable-2_fullteam_def20:
+      deferral_rate: 0.2
+      distribution: 'variable'
+      distribution_seed: 43
+      distribution_stdev: 0.2
+    variable-3_fullteam_def20:
+      deferral_rate: 0.2
+      distribution: 'variable'
+      distribution_seed: 44
+      distribution_stdev: 0.2
+    variable-4_fullteam_def20:
+      deferral_rate: 0.2
+      distribution: 'variable'
+      distribution_seed: 45
+      distribution_stdev: 0.2
+    #...Now for the homogenous Team 1
+    homogenous_partialteam-1_def20:
+      deferral_rate: 0.2
+      distribution: 'homogeneous'
+      absence: 0.5
+      absence_seed: 42
+    #Team 2
+    homogenous_partialteam-2_def20:
+      deferral_rate: 0.2
+      distribution: 'homogeneous'
+      absence: 0.5
+      absence_seed: 43
+    #Variable capacity -------
+    variable-1_partialteam-1_def20:
+      deferral_rate: 0.2
+      distribution: 'variable'
+      absence: 0.5
+      absence_seed: 42
+      distribution_seed: 42
+      distribution_stdev: 0.2
+    variable-1_partialteam-2_def20:
+      deferral_rate: 0.2
+      distribution: 'variable'
+      absence: 0.5
+      absence_seed: 43
+      distribution_seed: 42
+      distribution_stdev: 0.2
+    variable-2_partialteam-1_def20:
+      deferral_rate: 0.2
+      distribution: 'variable'
+      absence: 0.5
+      absence_seed: 42
+      distribution_seed: 43
+      distribution_stdev: 0.2
+    variable-2_partialteam-2_def20:
+      deferral_rate: 0.2
+      distribution: 'variable'
+      absence: 0.5
+      absence_seed: 43
+      distribution_seed: 43
+      distribution_stdev: 0.2
+
