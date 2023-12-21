@@ -87,3 +87,17 @@ The plots, numerical results, and hyperparameter choices relating to our ML mode
 The plots and numerical results regarding our synthetic expert's generation process and decision properties are obtained using the notebook [Code/experts/expert_properties.ipynb](Code/experts/expert_properties.ipynb). 
 
 
+
+### How to Cite FiFAR
+
+```
+@inproceedings{
+alves2023fifar,
+title={Fi{FAR}: A Fraud Detection Dataset for Learning to Defer},
+author={Jean Vieira Alves and Diogo Leit{\~a}o and S{\'e}rgio Jesus and Marco O. P. Sampaio and Pedro Saleiro and Mario A. T. Figueiredo and Pedro Bizarro},
+booktitle={2nd Workshop on Synthetic Data for AI in Finance},
+year={2023},
+url={https://openreview.net/forum?id=oyBm9bRNMK}
+}
+```
+The paper is publicly available at this [arXiv link](https://arxiv.org/abs/2312.13218)
