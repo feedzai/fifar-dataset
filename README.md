@@ -18,7 +18,7 @@ We use our dataset to develop a capacity-aware L2D method and rejection learning
 
 The submitted version of the paper and the datasheet are available in the following links:
 
-* [Paper](Documents/Paper.pdf)
+* [Paper](https://arxiv.org/abs/2312.13218)
 * [Datasheet](Documents/datasheet.pdf)
 
 
