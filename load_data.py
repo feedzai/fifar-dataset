@@ -3,7 +3,7 @@ import shutil
 import subprocess
 import yaml
 import os
-dataset_models_path = '../ICAIF_KAGGLE'
+dataset_models_path = './ICAIF_KAGGLE'
 expert_index = ['fpr_disparity.csv', 'full_w_table.csv']
 case_index = ['deployment_predictions.csv','train_predictions.csv']
 unindexed = ['p_of_error.csv','expert_properties.csv']

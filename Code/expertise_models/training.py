@@ -1,14 +1,7 @@
 import os
-import itertools
-#hi
-import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import seaborn as sns
 import yaml
-from joblib import Parallel, delayed
-from sklearn import metrics
-from aequitas.group import Group
 
 from autodefer.models import haic
 
