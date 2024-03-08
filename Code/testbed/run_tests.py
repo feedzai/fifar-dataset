@@ -12,7 +12,6 @@ from sklearn import metrics
 from aequitas.group import Group
 
 from autodefer.models import haic
-from autodefer.utils import thresholding as t, plotting
 import pickle
 import json
 
@@ -114,6 +113,7 @@ def make_assignments(X, envs, rma, exp_params, test_env_id):
     params_to_record = {k: exp_params[k] for k in FIELDS}
     exp_id = tuple([v for k, v in params_to_record.items()])
     rel_path = make_id_str(exp_id) + '_' + test_env_id[0] + '_' + test_env_id[1] + '.pkl'
+    print(envs[test_env_id]['batches'])
     a = rma.assign(
         X=X, score_col=SCORE_COL,
         batches=envs[test_env_id]['batches'],
@@ -207,8 +207,8 @@ for dir in os.listdir(batches_cap_path):
         continue
 
 
-    batch_name = dir.split('#')[0]
-    cap_name = dir.split('#')[1]
+    batch_name = dir.split('__')[0]
+    cap_name = dir.split('__')[1]
 
     bat = pd.read_csv(batches_cap_path + dir + '/batches.csv')
     bat = bat.set_index('case_id')

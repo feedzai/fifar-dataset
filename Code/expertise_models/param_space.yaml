@@ -6,9 +6,9 @@ LGBM:
         importance_type: 'gain'
 
         boosting_type:
-            - goss
-            - gbdt
-            #- dart  # Takes ~6 times longer than goss and gbdt
+            #- goss
+            #- gbdt
+            - dart  # Takes ~6 times longer than goss and gbdt
 
         enable_bundle:
             - True

@@ -11,7 +11,6 @@ from sklearn import metrics
 from aequitas.group import Group
 
 from autodefer.models import haic
-from autodefer.utils import thresholding as t, plotting
 
 import pickle
 
@@ -52,7 +51,7 @@ DECISION_COL = metadata['data_cols']['decision']
 EXPERT_IDS = metadata['expert_ids']
 
 TRAIN_ENVS = {
-    tuple(exp_dir.split('#')): {
+    tuple(exp_dir.split('__')): {
         'train': pd.read_parquet(cfg['train_paths']['environments'] + exp_dir + '/train.parquet'),
         'batches': pd.read_parquet(cfg['train_paths']['environments'] + exp_dir + '/batches.parquet'),
         'capacity': pd.read_parquet(cfg['train_paths']['environments'] + exp_dir + '/capacity.parquet'),
