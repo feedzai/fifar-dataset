@@ -340,5 +340,5 @@ test_results = test_eval.get_results(short=False)
 test_results['loss'] = (THEORETICAL_FP_COST * test_results['fp'] + test_results['fn']).astype('float')
 test_results = pd.concat([test_results, test_env_df], axis = 1, join = 'inner')
 
-test_results.to_parquet('./test_results/test_results_08_15_2023.parquet')
+test_results.to_parquet('./test_results/test_results.parquet')
 
