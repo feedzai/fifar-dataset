@@ -301,7 +301,6 @@ else:
                 exp_params=exp_params,
                 test_env_id = test_env_id
             )
-            print(exp_id)
 
             d = haic.query_experts(
                 pred=test_experts_pred_thresholded,
@@ -313,7 +312,6 @@ else:
                 decisions=d,
                 assert_capacity_constraints=False
             )
-            print(exp_pool)
 
             old_ix = TEST_X.loc[TEST_X['customer_age'] >= 50].index
             yng_ix = TEST_X.loc[TEST_X['customer_age'] < 50].index
