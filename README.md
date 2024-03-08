@@ -71,7 +71,23 @@ The Dataset with limited expert predictions can be used to train assignment syst
 
 ## Installing Necessary Dependencies
 
-To use the provided code to replicate our experiments, please install the package available in the folder [Dependencies](Dependencies).
+### Creating the Python Environment
+
+Requirements:
+* anaconda3
+  
+Before using any of the provided code, please create and activate the provided Python environment by running
+
+```
+conda env create -f fifar-environment.yml
+conda activate fifar-env
+```
+
+Then, please install the package available in the folder [Dependencies](Dependencies).
+
+```
+pip install Dependencies/autodefer-0.0.1-py3-none-any.whl 
+```
 
 ## Replicating our experiments
 

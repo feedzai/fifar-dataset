@@ -335,7 +335,6 @@ else:
             test_env_df = test_env_df.append(pd.Series([batch_size, batch_seed, absence, absence_seed, distribution, distribution_std, distribution_seed, deferral_rate, exp_pool, fpr_disp], index = test_env_df.columns), ignore_index = True)
 
 
-print(test_env_df)
 test_results = test_eval.get_results(short=False)
 test_results['loss'] = (THEORETICAL_FP_COST * test_results['fp'] + test_results['fn']).astype('float')
 test_results = pd.concat([test_results, test_env_df], axis = 1, join = 'inner')
