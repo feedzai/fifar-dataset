@@ -1,0 +1,23 @@
+name: fifar-env
+dependencies:
+  - pip
+  - python=3.7
+  - pip:
+    - pandas>=0.20
+    - numpy==1.*
+    - pytest
+    - scikit-learn==0.24.2
+    - lightgbm==3.2.1
+    - jupyter
+    - jupyterlab
+    - seaborn
+    - matplotlib
+    - scipy
+    - pathlib
+    - joblib
+    - pyarrow
+    - PyYAML
+    - conda-pack
+    - ortools
+    - optuna
+    - fastparquet
