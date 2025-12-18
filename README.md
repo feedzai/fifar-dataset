@@ -1,5 +1,8 @@
 ﻿# **F**i**FAR** - A Fraud Detection Dataset for Learning to Defer
 
+> [!CAUTION]
+> A more recent and upgraded version of this dataset was published on [*Nature Scientific Data*](https://www.nature.com/articles/s41597-025-04664-y). The new version is available [here](https://doi.org/10.6084/m9.figshare.28351172). We recommend you use it instead.
+
 ## Abstract
 
 Public dataset limitations have significantly hindered the development and benchmarking of *learning to defer* (L2D) algorithms, which aim to optimally combine human and AI capabilities in hybrid decision-making systems. In such systems, human availability and domain-specific concerns introduce difficulties, while obtaining human predictions for training and evaluation is costly. Financial fraud detection is a high-stakes setting where algorithms and human experts often work in tandem; however, there are no publicly available datasets for L2D concerning this important application of human-AI teaming. To fill this gap in L2D research, we introduce the *Financial Fraud Alert Review* Dataset (FiFAR), a synthetic bank account fraud detection dataset, containing the predictions of a team of 50 highly complex and varied synthetic fraud analysts, with varied bias and feature dependence. We also provide a realistic definition of human work capacity constraints, an aspect of L2D systems that is often overlooked, allowing for extensive testing of assignment systems under real-world conditions.
